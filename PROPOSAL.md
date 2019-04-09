@@ -17,6 +17,8 @@ select from one of the algorithims listed above, and my project will step by ste
 
 ##Libraries to use
 
-As for libraries, I plan on starting by using a simple graphics/ ui library 
+As for libraries, I plan on starting by using a simple graphics/ ui library like Dat Gui http://braitsch.github.io/ofxDatGui/. For this I plan on using ofImage() and ofGraphics() as shown 
+here: https://openframeworks.cc/documentation/graphics/
 
-Later on I may want to make my project a little more engaging by playing a little swapping sound for each step in the sorting process, for this I am considering the _______ library.
+Later on I may want to make my project a little more engaging by playing a little swapping sound for each step in the sorting process, for this I am considering the ofSoundPlayer class
+featured here: https://openframeworks.cc/documentation/sound/ofSoundPlayer/ 
