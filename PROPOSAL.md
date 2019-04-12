@@ -1,4 +1,4 @@
-#Final Project Proposal
+<h1>Final Project Proposal</h1>
 
 For my final project, I plan on creating a visualisaton for different sotring algorithims. So far, I plan on creating deomonstrations for the following: 
 
@@ -15,7 +15,7 @@ select from one of the algorithims listed above, and my project will step by ste
 2. A menu/window that will allow the user to select what they want to sort (numbers or charecters)
 3. Perhaps later on, graphics that actually look like Books (sorted alphabetically) or Glasses of some liquid sorted by volume, store items by price etc.
 
-##Libraries to use
+<h2>Libraries to use</h2>
 
 As for libraries, I plan on starting by using a simple graphics/ ui library like Dat Gui http://braitsch.github.io/ofxDatGui/. For this I plan on using ofImage() and ofGraphics() as shown 
 here: https://openframeworks.cc/documentation/graphics/
