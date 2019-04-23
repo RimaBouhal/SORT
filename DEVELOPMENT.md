@@ -36,7 +36,10 @@
 				- dependant on the length/ heirarchy in the sort
 				- super satisfying VooooOOOOOOooooP sound at the end
 	- OFC CONTROLLER 
-		- 
+		- Considering that I want my project to act as a learning tool, It would be cool to be able to present it
+		and controll it all remotley.
+		- I downloaded this ofc remote app from the Google Play store, and while the ui for it is bad, it does work, and I could
+		deffinitly make a small Android application to accompany my own project If I have the time.
 
 ##Week 3: a hiccup / recovery period
  My computer broke down on Saturday, got a temporary replacement on Monday (morning). Luckily I saved my progress ahead of time, and did not loose much work...
