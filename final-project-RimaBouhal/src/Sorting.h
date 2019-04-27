@@ -36,7 +36,9 @@ public:
     }
   }
 
-  // BUBBLE SORT (For Testing call with uncloked =true)
+
+  // -------------------------------------------------------------------------  BUBBLE SORT  --------------------------------------------------------------------------------------------
+  //(For Testing call with uncloked =true)
   void BubbleSort(bool(*compare)(const string&, const std::string&), bool uncloked =false) {
     bool swapped;
     vector<string>& vec = openGLApp->word_list;
@@ -57,8 +59,7 @@ public:
     }
   }
 
-
-  // --------------------------------------------------------------------------  QUICKSORT -------------------------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------  QUICKSORT  -------------------------------------------------------------------------------------------
 
   int Partition(int low, int high, bool(*compare)(const string&, const std::string&)) {
     vector<string>& vec = openGLApp->word_list;
@@ -77,8 +78,7 @@ public:
     return (i + 1);
   }
 
-  void QuickSort(int low, int high, bool(*compare)(const string&, const std::string&))
-  {
+  void QuickSort(int low, int high, bool(*compare)(const string&, const std::string&)) {
     if (low < high)
     {
       // pi is partitioning index, arr[p] is now at right place
@@ -91,7 +91,43 @@ public:
     }
   }
 
-  // -----------------------------------------------------------------------  SWAP AND COMPARE  ----------------------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------  MERGESORT  ------------------------------------------------------------------------------------------
+  int FindMiddle(bool(*compare)(const string&, const std::string&), int low, int high) {
+    return (1 + high) / 2;
+  }
+  
+  void MergeSort(bool(*compare)(const string&, const std::string&), int low, int high) {
+    vector<string>& vec = openGLApp->word_list;
+    int middle = FindMiddle(compare, low, high);
+
+    int left_size = middle - low + 1;
+    int right_size = high - middle;
+
+    // make temporary halves and copy their data
+    string left_temp = vec[left_size];
+    string right_temp = vec[right_size];
+
+    // Call MergeSort on both halves
+
+  }
+
+  // --------------------------------------------------------------------------  BOGO SORT  -----------------------------------------------------------------------------------------
+  void BogoSort(bool(*compare)(const string&, const std::string&), int low, int high) {
+    vector<string>& vec = openGLApp->word_list;
+    bool swapped;
+
+    for (int i = 0; i < 50; i++) {
+      if (low < high) {
+        random_shuffle(vec.begin(), vec.end());
+        swapped = false;
+        i++;
+      }
+      swapped = true;
+      break;
+    }
+  }
+
+  // -----------------------------------------------------------------------  SWAP AND COMPARE  -------------------------------------------------------------------------------------
   // for testing: unlocked is set true
 
   void swap(string& left, string& right, int leftIndex, int rightIndex, bool unlocked=false) {
@@ -125,5 +161,4 @@ public:
 
   // pointer to the main OpenGL Application
   ofApp* openGLApp;
-
 };

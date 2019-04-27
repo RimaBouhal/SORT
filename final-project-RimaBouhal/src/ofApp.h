@@ -8,51 +8,55 @@
 #include <string>
 #include<Poco/Condition.h>
 
+#define PORT 12345 // PORT TO USE FOR CONTROLLER
+
 class SortThread;
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
-	public:
-		void setup();
-		void update();
-		void draw();
+public:
+  void setup();
+  void update();
+  void draw();
 
-		void keyPressed(int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
-		void mouseExited(int x, int y);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
-		
+  void keyPressed(int key);
+  void keyReleased(int key);
+  void mouseMoved(int x, int y);
+  void mouseDragged(int x, int y, int button);
+  void mousePressed(int x, int y, int button);
+  void mouseReleased(int x, int y, int button);
+  void mouseEntered(int x, int y);
+  void mouseExited(int x, int y);
+  void windowResized(int w, int h);
+  void dragEvent(ofDragInfo dragInfo);
+  void gotMessage(ofMessage msg);
 
-    // ==========================================================================   MY CODE  ==========================================================================================
-    
-    ofApp();
-    ~ofApp();
 
-    SortThread* SortingApp;
-    string ToVerticalText(const std::string& originString);
-    void HandleUserEntry(int key);
+  // ==========================================================================   MY CODE  ==========================================================================================
+  ofApp();
+  ~ofApp();
 
-    ofTrueTypeFont    font;
-    string            sorting_info;
+  // THREAD USED FOR SORTING
+  SortThread* SortingApp;
+  string ToVerticalText(const std::string& originString);
+  void HandleUserEntry(int key);
 
-    std::vector <ofPoint> word_postions;
-    std::vector <string> word_list;
-    std::vector<ofColor> colors;
+  ofTrueTypeFont    font;
+  string            sorting_info;
 
-    int left_index;
-    int right_index;
-    int user_selection;
+  std::vector <ofPoint> word_postions;
+  std::vector <string> word_list;
+  std::vector<ofColor> colors;
 
-    // Wait for draw to run before animating
-    Poco::Condition condition_variable;
+  int left_index;
+  int right_index;
+  int user_selection;
 
-    // Syncronyse acess between main/sorting threads
-    ofMutex mutex;
+  // Wait for draw to run before animating
+  Poco::Condition condition_variable;
+
+  // Syncronyse acess between main/sorting threads
+  ofMutex mutex;
+
+  ofxOscReceiver receiver; // OFC OCNTROLLER
 };

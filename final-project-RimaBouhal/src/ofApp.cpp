@@ -17,18 +17,19 @@ void ofApp::setup(){
 
   // set the color array
   colors.resize(5);
-  colors[0] = ofColor::blue;
-  colors[1] = ofColor::gold;
-  colors[2] = ofColor::orange;
-  colors[3] = ofColor::navy;
-  colors[4] = ofColor::orangeRed;
+  colors[0] = ofColor::turquoise;
+  colors[1] = ofColor::lightBlue;
+  colors[2] = ofColor::lightGreen;
+  colors[3] = ofColor::darkBlue;
+  colors[4] = ofColor::cadetBlue;
 
   // set the pixel density
   ofTrueTypeFont::setGlobalDpi(96);
 
   // load the desired font
   font.load("sans-serif", 14);
-  sorting_info = "1 - unsorted list";
+
+  sorting_info = "SORTING ALGORITHIM VISUALISER";
 
   // load the txt document into a ofBuffer
   ofBuffer buffer = ofBufferFromFile("data.txt");
@@ -46,17 +47,35 @@ void ofApp::setup(){
 
   left_index = -1;
   right_index = -1;
+
+  // OSC revover listening on port 12345
+  receiver.setup(PORT);
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
-// To use for ofx reciver
+void ofApp::update() {
+  // check for waiting messages
+  while (receiver.hasWaitingMessages()) {
+
+    // get the next message
+    ofxOscMessage m;
+    receiver.getNextMessage(m);
+
+    if (m.getNumArgs() == 1)
+    {
+      string type = m.getTypeString();
+      user_selection = m.getArgAsInt(0);
+      HandleUserEntry(user_selection);
+    }
+  }
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
+  ofBackground(ofColor::floralWhite);
+
   if (word_list.empty()) {
-    ofSetColor(ofColor::red);
+    ofSetColor(ofColor::darkRed);
     ofDrawBitmapString("Error: Missing data file (data.txt) in bin\\Data\\", 50, 50, 10);
     return;
   }
@@ -95,23 +114,30 @@ void ofApp::draw(){
   mutex.unlock();
 
   // menu-instructions
-  ofSetColor(ofColor::purple);
+  ofSetColor(ofColor::black);
   string menuList("\nPress 1 for no sort");
   menuList.append("\nPress 2 for bubble sort alphabetically");
-  menuList.append("\nPress 3 for bubble sort word length");
+  menuList.append("\nPress 3 for bubble sort by word length");
+
   menuList.append("\nPress 4 for quicksort alphabetically");
-  menuList.append("\nPress 5 for quicksort word length");
+  menuList.append("\nPress 5 for quicksort by word length");
+
+  //menuList.append("\nPress 6 for bogosort alphabetically");
+  //menuList.append("\nPress 7 for bogosort by word length");
+
   ofDrawBitmapString(menuList, 20, 20, 10);
+
+  // -------------------------------------------------------------------------------  CREATE BUTTONS  ---------------------------------------------------------------------------------------------
+
 }
 
-//--------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void ofApp::keyPressed(int key){
   user_selection = key - '0';
   HandleUserEntry(user_selection);
 }
 
-//--------------------------------------------------------------
-void ofApp::keyReleased(int key){
+void ofApp::keyReleased(int key) {
 
 }
 
@@ -170,34 +196,32 @@ std::string ofApp::ToVerticalText(const std::string& originString) {
 }
 
 void ofApp::HandleUserEntry(int selecltion) {
-
   switch (selecltion) {
   case 1: // setup (reload)
-    sorting_info = "1 - unsorted list";
+    sorting_info = "UNSORTED LIST";
     setup();
     break;
   case 2: // bubble sort alphabetically
-    sorting_info = "2 - bubble sorting alphabetically";
+    sorting_info = "BUBBLE-SORTING ALPHABETICALLY...";
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
   case 3: // bubble sort by word length
-    sorting_info = "3 - bubble sorting on word length";
+    sorting_info = "BUBBLE SORTING BY WORD LENGTH...";
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
   case 4: // quick sort alphabetically
-    sorting_info = "4 - quick-sorting alphabetically";
+    sorting_info = "QUICKSORTING ALPHABETICALLY...";
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
   case 5: // quick sort by word length
-    sorting_info = "5 - quick-sorting on word length";
+    sorting_info = "QUICKSORTING BY WORD LENGTH...";
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
   default:
-    sorting_info = "Invalid Selection";
+    sorting_info = "INVALID SELECTION";
   }
-
 }
