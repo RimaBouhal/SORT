@@ -40,9 +40,13 @@ public:
   SortThread* SortingApp;
   string ToVerticalText(const std::string& originString);
   void HandleUserEntry(int key);
+  void LoadDataFile(string file_name);  // loads the data file and parses it
+
+  string file_path = "C:\RIMA\of_v0.10.1_vs2017_release\apps\myApps\final-project-RimaBouhal\final-project-RimaBouhal\bin\data";
 
   ofTrueTypeFont    font;
   string            sorting_info;
+
 
   std::vector <ofPoint> word_postions;
   std::vector <string> word_list;

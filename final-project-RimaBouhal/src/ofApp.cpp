@@ -13,7 +13,7 @@ ofApp::~ofApp() {
 }
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
 
   // set the color array
   colors.resize(5);
@@ -30,23 +30,6 @@ void ofApp::setup(){
   font.load("sans-serif", 14);
 
   sorting_info = "SORTING ALGORITHIM VISUALISER";
-
-  // load the txt document into a ofBuffer
-  ofBuffer buffer = ofBufferFromFile("data.txt");
-  string   content = buffer.getText();
-
-  // split string and ignore empty strings and trim white space
-  word_list = ofSplitString(content, "\r\n", true, true);
-
-  word_postions.resize(word_list.size());
-  for (unsigned i = 0; i < word_list.size(); i++) {
-    word_postions[i] = ofPoint(i + 0.5, 0, 0);
-  }
-
-  user_selection = 0; // user selection
-
-  left_index = -1;
-  right_index = -1;
 
   // OSC revover listening on port 12345
   receiver.setup(PORT);
@@ -74,9 +57,21 @@ void ofApp::update() {
 void ofApp::draw() {
   ofBackground(ofColor::floralWhite);
 
+  // menu-instructions
+  ofSetColor(ofColor::black);
+  string menuList("\nPress 0 to select a file to sort");
+  menuList.append("\nPress 1 for no sort");
+  menuList.append("\nPress 2 for bubble sort alphabetically");
+  menuList.append("\nPress 3 for bubble sort by word length");
+
+  menuList.append("\nPress 4 for quicksort alphabetically");
+  menuList.append("\nPress 5 for quicksort by word length");
+
+  ofDrawBitmapString(menuList, 20, 20, 10);
+
   if (word_list.empty()) {
     ofSetColor(ofColor::darkRed);
-    ofDrawBitmapString("Error: Missing data file (data.txt) in bin\\Data\\", 50, 50, 10);
+    ofDrawBitmapString("Error: Missing data file (data.txt) in bin\\Data\\", 500, 60);
     return;
   }
 
@@ -113,26 +108,14 @@ void ofApp::draw() {
   condition_variable.signal();
   mutex.unlock();
 
-  // menu-instructions
-  ofSetColor(ofColor::black);
-  string menuList("\nPress 1 for no sort");
-  menuList.append("\nPress 2 for bubble sort alphabetically");
-  menuList.append("\nPress 3 for bubble sort by word length");
 
-  menuList.append("\nPress 4 for quicksort alphabetically");
-  menuList.append("\nPress 5 for quicksort by word length");
-
-  //menuList.append("\nPress 6 for bogosort alphabetically");
-  //menuList.append("\nPress 7 for bogosort by word length");
-
-  ofDrawBitmapString(menuList, 20, 20, 10);
 
   // -------------------------------------------------------------------------------  CREATE BUTTONS  ---------------------------------------------------------------------------------------------
 
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void ofApp::keyPressed(int key){
+void ofApp::keyPressed(int key) {
   user_selection = key - '0';
   HandleUserEntry(user_selection);
 }
@@ -142,47 +125,47 @@ void ofApp::keyReleased(int key) {
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
+void ofApp::mouseEntered(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
+void ofApp::mouseExited(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 }
 
@@ -193,6 +176,25 @@ std::string ofApp::ToVerticalText(const std::string& originString) {
     str = str + originString[i] + returnChar;
   }
   return str;
+}
+
+void ofApp::LoadDataFile(string file_name) {
+  // load the txt document into a ofBuffer
+  ofBuffer buffer = ofBufferFromFile(file_name);
+  string   content = buffer.getText();
+
+  // split string and ignore empty strings and trim white space
+  word_list = ofSplitString(content, "\r\n", true, true);
+
+  word_postions.resize(word_list.size());
+  for (unsigned i = 0; i < word_list.size(); i++) {
+    word_postions[i] = ofPoint(i + 0.5, 0, 0);
+  }
+
+  user_selection = 0; // user selection
+
+  left_index = -1;
+  right_index = -1;
 }
 
 void ofApp::HandleUserEntry(int selecltion) {
@@ -221,6 +223,23 @@ void ofApp::HandleUserEntry(int selecltion) {
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
+  case 0:
+  {
+    ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a .txt file to sort", false, file_path);
+
+    if (openFileResult.bSuccess) {
+      ofLogVerbose("User selected a file");
+
+      ofFile file(openFileResult.getPath());
+
+      if (file.exists()) {
+        LoadDataFile(file.getFileName());
+      }
+      else {
+        ofLogVerbose("File does not exist");
+      }
+    }
+  }
   default:
     sorting_info = "INVALID SELECTION";
   }

@@ -39,7 +39,7 @@ public:
 
   // -------------------------------------------------------------------------  BUBBLE SORT  --------------------------------------------------------------------------------------------
   //(For Testing call with uncloked =true)
-  void BubbleSort(bool(*compare)(const string&, const std::string&), bool uncloked =false) {
+  void BubbleSort(bool(*compare)(const string&, const std::string&), bool uncloked = false) {
     bool swapped;
     vector<string>& vec = openGLApp->word_list;
 
@@ -48,7 +48,7 @@ public:
 
       for (int j = 0; j < vec.size() - i - 1; j++) {
         if (compare(vec[j + 1], vec[j])) {
-          swap(vec[j + 1], vec[j],j+1,j, uncloked);
+          swap(vec[j + 1], vec[j], j + 1, j, uncloked);
           swapped = true;
         }
       }
@@ -71,10 +71,10 @@ public:
       // equal to pivot 
       if (compare(vec[j], pivot)) {
         i++;    // increment index of smaller element
-        swap(vec[i], vec[j],i,j);
+        swap(vec[i], vec[j], i, j);
       }
     }
-    swap(vec[i + 1], vec[high],i+1,high);
+    swap(vec[i + 1], vec[high], i + 1, high);
     return (i + 1);
   }
 
@@ -95,7 +95,7 @@ public:
   int FindMiddle(bool(*compare)(const string&, const std::string&), int low, int high) {
     return (1 + high) / 2;
   }
-  
+
   void MergeSort(bool(*compare)(const string&, const std::string&), int low, int high) {
     vector<string>& vec = openGLApp->word_list;
     int middle = FindMiddle(compare, low, high);
@@ -111,26 +111,10 @@ public:
 
   }
 
-  // --------------------------------------------------------------------------  BOGO SORT  -----------------------------------------------------------------------------------------
-  void BogoSort(bool(*compare)(const string&, const std::string&), int low, int high) {
-    vector<string>& vec = openGLApp->word_list;
-    bool swapped;
-
-    for (int i = 0; i < 50; i++) {
-      if (low < high) {
-        random_shuffle(vec.begin(), vec.end());
-        swapped = false;
-        i++;
-      }
-      swapped = true;
-      break;
-    }
-  }
-
   // -----------------------------------------------------------------------  SWAP AND COMPARE  -------------------------------------------------------------------------------------
   // for testing: unlocked is set true
 
-  void swap(string& left, string& right, int leftIndex, int rightIndex, bool unlocked=false) {
+  void swap(string& left, string& right, int leftIndex, int rightIndex, bool unlocked = false) {
     //  wait for the draw function (main update/draw() thread) to signal the condition
     // this guarantees a draw before each swap
 
