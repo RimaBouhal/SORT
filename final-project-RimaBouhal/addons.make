@@ -1,3 +1,4 @@
+ofxGuiExtended-master
 ofxOsc
 ofxPoco
 ofxUnitTests

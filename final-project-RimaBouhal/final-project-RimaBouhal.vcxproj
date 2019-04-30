@@ -17,14 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="UnitTest|Win32">
-      <Configuration>UnitTest</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="UnitTest|x64">
-      <Configuration>UnitTest</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Condition="'$(WindowsTargetPlatformVersion)'==''">
     <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
@@ -42,17 +34,7 @@
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
@@ -82,15 +64,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="../../../../libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="../../../../libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="../../../../libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="../../../../libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
   </ImportGroup>
@@ -102,21 +76,7 @@
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>$(ProjectName)_debug</TargetName>
-    <LinkIncremental>true</LinkIncremental>
-    <GenerateManifest>true</GenerateManifest>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>$(ProjectName)_debug</TargetName>
-    <LinkIncremental>true</LinkIncremental>
-    <GenerateManifest>true</GenerateManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|x64'">
     <OutDir>bin\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_debug</TargetName>
@@ -140,29 +100,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
-      <AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\addons\ofxPoco\libs\poco\lib\vs\Win32\Debug;..\..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent />
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxGuiExtended-master\src;..\..\..\..\addons\ofxGuiExtended-master\src\DOM;..\..\..\..\addons\ofxGuiExtended-master\src\containers;..\..\..\..\addons\ofxGuiExtended-master\src\controls;..\..\..\..\addons\ofxGuiExtended-master\src\util;..\..\..\..\addons\ofxGuiExtended-master\src\view;..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
@@ -184,30 +122,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
-      <AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\addons\ofxPoco\libs\poco\lib\vs\x64\Debug;..\..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent />
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|x64'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxGuiExtended-master\src;..\..\..\..\addons\ofxGuiExtended-master\src\DOM;..\..\..\..\addons\ofxGuiExtended-master\src\containers;..\..\..\..\addons\ofxGuiExtended-master\src\controls;..\..\..\..\addons\ofxGuiExtended-master\src\util;..\..\..\..\addons\ofxGuiExtended-master\src\view;..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -229,7 +144,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxGuiExtended-master\src;..\..\..\..\addons\ofxGuiExtended-master\src\DOM;..\..\..\..\addons\ofxGuiExtended-master\src\containers;..\..\..\..\addons\ofxGuiExtended-master\src\controls;..\..\..\..\addons\ofxGuiExtended-master\src\util;..\..\..\..\addons\ofxGuiExtended-master\src\view;..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -254,7 +169,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxGuiExtended-master\src;..\..\..\..\addons\ofxGuiExtended-master\src\DOM;..\..\..\..\addons\ofxGuiExtended-master\src\containers;..\..\..\..\addons\ofxGuiExtended-master\src\controls;..\..\..\..\addons\ofxGuiExtended-master\src\util;..\..\..\..\addons\ofxGuiExtended-master\src\view;..\..\..\..\addons\ofxOsc\libs;..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\addons\ofxOsc\src;..\..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\..\addons\ofxPoco\src;..\..\..\..\addons\ofxUnitTests\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
@@ -273,10 +188,36 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiContainer.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiGroup.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiMenu.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiPanel.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiSliderGroup.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiTabs.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiButton.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFpsPlotter.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFunctionPlotter.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiGraphics.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiInputField.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiLabel.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiRangeSlider.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiSlider.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiToggle.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiValuePlotter.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiZoomableGraphics.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Document.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Element.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Events.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Exceptions.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Layout.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiElement.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiExtended.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\JsonConfigParser.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMBoxLayout.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMFlexBoxLayout.cpp" />
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMLayoutHelper.cpp" />
     <ClCompile Include="..\..\..\..\addons\ofxOsc\src\ofxOscBundle.cpp" />
     <ClCompile Include="..\..\..\..\addons\ofxOsc\src\ofxOscMessage.cpp" />
     <ClCompile Include="..\..\..\..\addons\ofxOsc\src\ofxOscParameterSync.cpp" />
@@ -299,6 +240,40 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Sorting.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiContainer.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiGroup.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiMenu.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiPanel.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiSliderGroup.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiTabs.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiButton.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFpsPlotter.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFunctionPlotter.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiGraphics.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiInputField.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiLabel.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiRangeSlider.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiSlider.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiToggle.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiValuePlotter.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiZoomableGraphics.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Document.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Element.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Events.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\EventTarget.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Exceptions.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Layout.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\ofxDOM.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Types.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiElement.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiExtended.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\util\IDGenerator.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\JsonConfigParser.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMBoxLayout.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMFlexBoxLayout.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMLayoutHelper.h" />
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxGuiDefaultConfig.h" />
     <ClInclude Include="..\..\..\..\addons\ofxOsc\src\ofxOsc.h" />
     <ClInclude Include="..\..\..\..\addons\ofxOsc\src\ofxOscArg.h" />
     <ClInclude Include="..\..\..\..\addons\ofxOsc\src\ofxOscBundle.h" />
@@ -321,7 +296,6 @@
     <ClInclude Include="..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h" />
     <ClInclude Include="..\..\..\..\addons\ofxPoco\src\ofxXmlPoco.h" />
     <ClInclude Include="..\..\..\..\addons\ofxUnitTests\src\ofxUnitTests.h" />
-    <ClInclude Include="src\Sorting.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
@@ -331,11 +305,14 @@
   <ItemGroup>
     <ResourceCompile Include="icon.rc">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='UnitTest|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\DEVELOPMENT.md" />
+    <None Include="..\PROPOSAL.md" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ProjectExtensions>

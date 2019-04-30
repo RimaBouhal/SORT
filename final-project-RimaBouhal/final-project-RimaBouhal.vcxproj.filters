@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\ofApp.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiContainer.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiGroup.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiMenu.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiPanel.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiSliderGroup.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiTabs.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiButton.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFpsPlotter.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFunctionPlotter.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiGraphics.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiInputField.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiLabel.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiRangeSlider.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiSlider.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiToggle.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiValuePlotter.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiZoomableGraphics.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Document.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Element.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Events.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Exceptions.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Layout.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiElement.cpp">
+      <Filter>addons\ofxGuiExtended-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiExtended.cpp">
+      <Filter>addons\ofxGuiExtended-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\JsonConfigParser.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMBoxLayout.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMFlexBoxLayout.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMLayoutHelper.cpp">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\addons\ofxOsc\src\ofxOscBundle.cpp">
       <Filter>addons\ofxOsc\src</Filter>
@@ -46,8 +133,11 @@
     <ClCompile Include="..\..\..\..\addons\ofxPoco\src\ofxXmlPoco.cpp">
       <Filter>addons\ofxPoco\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\TestSorting.cpp">
-      <Filter>Tests</Filter>
+      <Filter>tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +146,27 @@
     </Filter>
     <Filter Include="addons">
       <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master">
+      <UniqueIdentifier>{0E161B9A-81D7-A44A-886A-76D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src">
+      <UniqueIdentifier>{B9AB7AAD-870D-DD22-ADD4-95E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src\containers">
+      <UniqueIdentifier>{595F75A4-9E91-7EA7-CEEC-CCBA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src\controls">
+      <UniqueIdentifier>{31A71F14-33CB-0C12-6798-287E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src\DOM">
+      <UniqueIdentifier>{A71BA6E8-BFB8-63A9-D509-2E83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src\util">
+      <UniqueIdentifier>{F034F44D-9599-1F8D-566A-CACA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGuiExtended-master\src\view">
+      <UniqueIdentifier>{9816F263-436A-6AC5-9CF2-AFA2}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxOsc">
       <UniqueIdentifier>{D91DCA33-6E5D-4481-2AEC-9FBB}</UniqueIdentifier>
@@ -93,13 +204,115 @@
     <Filter Include="addons\ofxUnitTests\src">
       <UniqueIdentifier>{6DB6A1EA-29BB-7859-928B-898A}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tests">
-      <UniqueIdentifier>{ac053c82-9b49-4ba5-9f73-ed35ffd575f5}</UniqueIdentifier>
+    <Filter Include="tests">
+      <UniqueIdentifier>{ca98ab9c-a807-4dfe-9be9-e87cb0431e48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sorting.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiContainer.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiGroup.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiMenu.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiPanel.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiSliderGroup.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\containers\ofxGuiTabs.h">
+      <Filter>addons\ofxGuiExtended-master\src\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiButton.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFpsPlotter.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiFunctionPlotter.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiGraphics.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiInputField.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiLabel.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiRangeSlider.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiSlider.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiToggle.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiValuePlotter.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\controls\ofxGuiZoomableGraphics.h">
+      <Filter>addons\ofxGuiExtended-master\src\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Document.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Element.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Events.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\EventTarget.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Exceptions.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Layout.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\ofxDOM.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\DOM\Types.h">
+      <Filter>addons\ofxGuiExtended-master\src\DOM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiElement.h">
+      <Filter>addons\ofxGuiExtended-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\ofxGuiExtended.h">
+      <Filter>addons\ofxGuiExtended-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\util\IDGenerator.h">
+      <Filter>addons\ofxGuiExtended-master\src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\JsonConfigParser.h">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMBoxLayout.h">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMFlexBoxLayout.h">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxDOMLayoutHelper.h">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\addons\ofxGuiExtended-master\src\view\ofxGuiDefaultConfig.h">
+      <Filter>addons\ofxGuiExtended-master\src\view</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\addons\ofxOsc\src\ofxOsc.h">
       <Filter>addons\ofxOsc\src</Filter>
@@ -167,14 +380,19 @@
     <ClInclude Include="..\..\..\..\addons\ofxUnitTests\src\ofxUnitTests.h">
       <Filter>addons\ofxUnitTests\src</Filter>
     </ClInclude>
-    <ClInclude Include="src\catch.hpp">
-      <Filter>Tests</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Sorting.h">
+    <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\catch.hpp">
+      <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+    <None Include="..\PROPOSAL.md" />
+    <None Include="..\DEVELOPMENT.md" />
   </ItemGroup>
 </Project>
