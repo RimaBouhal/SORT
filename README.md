@@ -54,6 +54,7 @@ For ofxGuiExtended:
 	Libary: https://github.com/frauzufall/ofxGuiExtended
 
 For threading: 
-	Links: https://openframeworks.cc/ofBook/chapters/threads.html#whatsathreadandwhentouseit
 	Documentation: https://en.cppreference.com/w/cpp/thread/condition_variable
+	Links: https://openframeworks.cc/ofBook/chapters/threads.html#whatsathreadandwhentouseit
+	
 ----------------------------------------------------------------------------------------------------------------------
