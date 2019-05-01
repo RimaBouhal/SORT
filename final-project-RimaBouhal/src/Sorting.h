@@ -18,19 +18,19 @@ public:
 
   void threadedFunction() {
 
-    if (openGLApp->user_selection == 2) {
+    if (openGLApp->user_selection == 1) {
       // buble sort alphabitically
       BubbleSort(SortThread::CompareAlphabetically);
     }
-    else if (openGLApp->user_selection == 3) {
+    else if (openGLApp->user_selection == 2) {
       // buble sort by word length
       BubbleSort(SortThread::CompareLength);
     }
-    else if (openGLApp->user_selection == 4) {
+    else if (openGLApp->user_selection == 3) {
       // quick sort alphabitically
       QuickSort(0, openGLApp->word_list.size() - 1, SortThread::CompareAlphabetically);
     }
-    else if (openGLApp->user_selection == 5) {
+    else if (openGLApp->user_selection == 4) {
       // quick sort by word length
       QuickSort(0, openGLApp->word_list.size() - 1, SortThread::CompareLength);
     }
@@ -92,6 +92,7 @@ public:
   }
 
   // ---------------------------------------------------------------------------  MERGESORT  ------------------------------------------------------------------------------------------
+
   int FindMiddle(bool(*compare)(const string&, const std::string&), int low, int high) {
     return (1 + high) / 2;
   }

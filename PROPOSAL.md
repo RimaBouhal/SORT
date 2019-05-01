@@ -1,24 +1,52 @@
 <h1>Final Project Proposal</h1>
 
-For my final project, I plan on creating a visualisaton for different sotring algorithims. So far, I plan on creating deomonstrations for the following: 
+For my final project, I plan on creating a visualisaton for different sotring algorithims. I want this project to function as
+a learning tool for a classroom setting. I created the following:  
 
-1. Inserison sort
-2. Bubble sort
-3. Merge Sort
-4. Quicksort
-5. Bogosort (maybe)
+	1. Bubble Sort Alphabetically
+	2. Bubble Sort By Word Length
+	3. Quicksort Alphabetically 
+	4. Quicksort By Word Length
 
-To demonstrate theese algorithims, I am thinking of starting out with just ordering a list of boxes containing different words (like flashcards). From here, I will allow the user to 
-select from one of the algorithims listed above, and my project will step by step shuffle the cards in order untill the list is sorted. Some features I plan on having include the following:
+	NOTE: This project will only really work for lists of words, and not numbers, I have found that sorting with word lists
+	is easier to represent length and order visually.
 
-1. A menu/window that will allow the user to select ONE sorting algorithim to use at a time (radio buttons)
-2. A menu/window that will allow the user to select what they want to sort (numbers or charecters)
-3. Perhaps later on, graphics that actually look like Books (sorted alphabetically) or Glasses of some liquid sorted by volume, store items by price etc.
+Features that my application will have include the following: 
+
+	1. I will allow the user to select their own text files of strings to sort.
+		- I included lists of my own to practice with. 
+
+	2. The user can also controll the project with and OSC controlling application
+		- The controller I first used was 
+		- This will work so long as the device running the program and the device
+		  running the controller are on the same wireless network (Illinois_net_geust works)
+
+	3. The user can also controll the project using keyboard shortcuts and/or a button panel
+	   I made via OfxExtendedGUI
+		- Groups of radio buttons
+			- Sorting 
+			- Orientation
+			- Menu Options (file explorer)
+
+	4. The user can also select which way the list is oriented
+		- horizontally
+		- vertically
 
 <h2>Libraries to use</h2>
+Because I will be using an OSC controller as a remote controll for my application, I needed to use the Ofx OFC libary
+linked here: 
 
-As for libraries, I plan on starting by using a simple graphics/ ui library like Dat Gui http://braitsch.github.io/ofxDatGui/. For this I plan on using ofImage() and ofGraphics() as shown 
-here: https://openframeworks.cc/documentation/graphics/
+For the Menu panel and buttons, I used OfxExtendedGUI.
+linked here: 
 
-Later on I may want to make my project a little more engaging by playing a little swapping sound for each step in the sorting process, for this I am considering the ofSoundPlayer class
-featured here: https://openframeworks.cc/documentation/sound/ofSoundPlayer/ 
+Both of these libraries allowed for me to create a visually appealing and convenient User Interface (though I also included
+keyboard shortcuts).
+
+<h2>Additonal Notes</h2>
+For automatic testing, my test cases essentially run the application and preform one of the four sorting methods. The tests
+pass once they sucsessfully sort the list.
+
+I would like to make this project more extensible by completing any of the following:
+	1. Implementing some form of a numerical sort
+	2. Creating a dark mode/ theme selection for colors 
+	3. Adding a swapping sound that would vary in pitch as the sorting went on.

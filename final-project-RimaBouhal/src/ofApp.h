@@ -43,8 +43,8 @@ public:
 
   ofTrueTypeFont    font;
 
-  std::vector <string> word_list; // Holds the position of the word
-  std::vector<ofColor> colors;   // Gives the sorted display a color pattern
+  std::vector <string> word_list;  // Holds the position of the word
+  std::vector<ofColor> colors;    // Gives the sorted display a color pattern
 
   int left_index;
   int right_index;
@@ -84,11 +84,8 @@ private:
   ofParameter<bool> horizontal_display;
   ofParameter<bool> vertical_display;
 
-  // display status
-  ofxGuiGroup *status_info;
-
-  // sorting status
-  ofParameter<string> sorting_info;
+  ofxGuiGroup *status_info;            // display status
+  ofParameter<string> sorting_info;   // sorting status
 
   // THE MENU
   ofFbo fbo;

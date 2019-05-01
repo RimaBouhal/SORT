@@ -2,11 +2,10 @@
 #include "Sorting.h"
 
 // ------------------------------ RESOURCS ---------------------------------------------
-// For bubble sort
-//https://codereview.stackexchange.com/questions/167422/sorting-algorithms-bubble-sort
 //
 // Regarding threading
 //https://openframeworks.cc/ofBook/chapters/threads.html#whatsathreadandwhentouseit
+//
 //--------------------------------------------------------------------------------------
 
 using std::vector;
@@ -42,7 +41,7 @@ void ofApp::setup() {
 
   ofSetLogLevel(OF_LOG_VERBOSE);
 
-  // BUILD THE GUI PANEL
+  // ----------------------------- CONTROL PANEL ----------------------------------------
   settings_panel = gui.addPanel("Settings", ofJson({ {"width", 300} }));
   settings_panel->setPosition(ofGetWidth() - settings_panel->getWidth(), 0);
   settings_panel->getHeader()->setBackgroundColor(ofColor::mediumSlateBlue);
@@ -59,8 +58,8 @@ void ofApp::setup() {
   sorting_parameters.add(random_shufle.set("Random shuffle", false));
   sorting_parameters.add(bubblesort_abc.set("Bubble sort alphabetically", false));
   sorting_parameters.add(bubblesort_length.set("Bubble sort by word length", false));
-  sorting_parameters.add(quicksort_abc.set("Quicksort by word length", false));
-  sorting_parameters.add(quicksort_length.set("Quicksort alphabetically", false));
+  sorting_parameters.add(quicksort_abc.set("Quicksort alphabetically", false));
+  sorting_parameters.add(quicksort_length.set("Quicksort by word length", false));
 
   // display options group
   display_parameters.setName("Select display option");
@@ -93,6 +92,7 @@ void ofApp::setup() {
   ofxGuiContainer* menu = gui.addMenu(data);
   // menu->loadTheme("theme_light.json", true);
   add_load_file.addListener(this, &ofApp::SeletDataFile);
+  // ------------------------------------------------------------------------------------
 }
 
 void ofApp::exit() {
@@ -187,11 +187,10 @@ void ofApp::keyPressed(int key) {
       sorting_toggles->setActiveToggle(sel);
       HandleUserEntry(sel);
     }
-
   }
 }
 
-// All of the ofApp.cpp methods are folded here
+// All the unused methods from App.cpp folded here
 #pragma region
 void ofApp::keyReleased(int key) {
 }
@@ -240,7 +239,7 @@ void ofApp::gotMessage(ofMessage msg) {
 void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 }
-#pragma endregion
+#pragma endregion 
 
 
 // insert /n to to display vertically
@@ -303,26 +302,26 @@ void ofApp::HandleUserEntry(int& selecltion) {
     SortingApp->startThread();
     break;
   case 3:                                                  // CASE 3: Quicksort alphabetically
-    sorting_info = "3 - Quicksort by word length";
+    sorting_info = "3 - Quicksort alpabetically";
     user_selection = selecltion;
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
   case 4:                                                 // CASE 4: Quicksort by word length
-    sorting_info = "4 - Quicksort alphabetically";
+    sorting_info = "4 - Quicksort by word length";
     user_selection = selecltion;
     SortingApp->setup(this);
     SortingApp->startThread();
     break;
 
   case 'h':
-  case 'H':                                              // CASE 'h'/'H': Display Horizontally
+  case 'H':                                               // CASE 'h'/'H': Display Horizontally
     is_vertical = false;
     break;
 
   case 'v':
   case 'V':
-    is_vertical = true;                                 // CASE 'v'/'V': Display Vertically
+    is_vertical = true;                                  // CASE 'v'/'V': Display Vertically
     break;
 
   default:
