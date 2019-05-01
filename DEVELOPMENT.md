@@ -1,6 +1,6 @@
-#DEVELOPMENT 
+# DEVELOPMENT 
 
-##Week 1: finding a project and testing libraries
+## Week 1: finding a project and testing libraries
 1. Completed my Proposal.md
 
 2. Explored libraries that I may be using.
@@ -9,7 +9,8 @@
 
 4. Explored the example of projects where I found inspartation for my own.
 
-##Week 2: continuing on
+
+## Week 2: continuing on
 1. Proposal got approved (yay!)
 
 2. Began to draw out my User Interface
@@ -42,7 +43,7 @@
 		deffinitly make a small Android application to accompany my own project If I have the time.
 
 
-##Week 3: a hiccup / recovery period
+## Week 3: a hiccup / recovery period
  My computer broke down on Saturday, got a temporary replacement on Monday (morning). Luckily I saved my progress ahead of time, and did not loose much work...
 
  1. Recovered my work (yay!)
@@ -66,7 +67,7 @@
 		- link: 
 
 
-##Week 4: the final stretch
+## Week 4: the final stretch
 1. My app now contains functioning buttons using the ofxExtendedGui 
 	- link: https://github.com/frauzufall/ofxGuiExtended
 	- My control panel is based off of the example project that came with this repository
@@ -89,15 +90,13 @@
 	will spread out relative to my screen size. 
 
 
-## WHAT IS LEFT TO DO BEFORE TOMORROW NIGHT
-2) debugging
-	- Bubblesort will no longer run :(
-	- The problem has to do with threading, I think ik why
+## MAY 1: the final, final stretch
+1. Updated my PROPOSAL.md to better represent what my application was doing
+	- Provided links to extennal libraries that I used
+	- Considered what I could have done to make my application more extensive or
+	more interesting.
 
-3) cosmetics (tonight)
+2. Wrote and completed my Proposal.md
+	- Summarize the app and explains the ways in which my app can be controled.
 
-4) sound
-
-5) making my code a little more readable (tonight)
-
-4) Updating my proposal and ReadMe (tonight)
+3.

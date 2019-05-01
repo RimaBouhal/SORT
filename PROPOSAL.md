@@ -16,19 +16,19 @@ Features that my application will have include the following:
 	1. I will allow the user to select their own text files of strings to sort.
 		- I included lists of my own to practice with. 
 
-	2. The user can also control the project with and OSC controlling application
+	2. The user can also control the project with and OSC controlling application.
 		- The controller I first used was 
 		- This will work so long as the device running the program and the device
 		  running the controller are on the same wireless network (Illinois_net_geust works)
 
-	3. The user can also control the project using keyboard shortcuts and/or a button panel
+	3. The user can also control the project using keyboard shortcuts and/or a button panel.
 	   I made via ofxGuiExtended
 		- Groups of radio buttons
 			- Sorting 
 			- Orientation
 			- Menu Options (file explorer)
 
-	4. The user can also select which way the list is oriented
+	4. The user can also select which way the list is oriented.
 		- horizontally
 		- vertically
 

@@ -4,7 +4,7 @@
 // ------------------------------ RESOURCS ---------------------------------------------
 //
 // Regarding threading
-//https://openframeworks.cc/ofBook/chapters/threads.html#whatsathreadandwhentouseit
+// https://openframeworks.cc/ofBook/chapters/threads.html#whatsathreadandwhentouseit
 //
 //--------------------------------------------------------------------------------------
 
