@@ -22,7 +22,7 @@ Features that my application will have include the following:
 		  running the controller are on the same wireless network (Illinois_net_geust works)
 
 	3. The user can also controll the project using keyboard shortcuts and/or a button panel
-	   I made via OfxExtendedGUI
+	   I made via ofxGuiExtended
 		- Groups of radio buttons
 			- Sorting 
 			- Orientation
@@ -34,10 +34,10 @@ Features that my application will have include the following:
 
 <h2>Libraries to use</h2>
 Because I will be using an OSC controller as a remote controll for my application, I needed to use the Ofx OFC libary
-linked here: 
+linked here: https://openframeworks.cc/documentation/ofxOsc/
 
-For the Menu panel and buttons, I used OfxExtendedGUI.
-linked here: 
+For the Menu panel and buttons, I used ofxGuiExtended.
+linked here: https://github.com/frauzufall/ofxGuiExtended
 
 Both of these libraries allowed for me to create a visually appealing and convenient User Interface (though I also included
 keyboard shortcuts).
