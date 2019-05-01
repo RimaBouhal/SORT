@@ -16,12 +16,12 @@ Features that my application will have include the following:
 	1. I will allow the user to select their own text files of strings to sort.
 		- I included lists of my own to practice with. 
 
-	2. The user can also controll the project with and OSC controlling application
+	2. The user can also control the project with and OSC controlling application
 		- The controller I first used was 
 		- This will work so long as the device running the program and the device
 		  running the controller are on the same wireless network (Illinois_net_geust works)
 
-	3. The user can also controll the project using keyboard shortcuts and/or a button panel
+	3. The user can also control the project using keyboard shortcuts and/or a button panel
 	   I made via ofxGuiExtended
 		- Groups of radio buttons
 			- Sorting 
@@ -33,7 +33,7 @@ Features that my application will have include the following:
 		- vertically
 
 <h2>Libraries to use</h2>
-Because I will be using an OSC controller as a remote controll for my application, I needed to use the Ofx OFC libary
+Because I will be using an OSC controller as a remote control for my application, I needed to use the Ofx OFC libary
 linked here: https://openframeworks.cc/documentation/ofxOsc/
 
 For the Menu panel and buttons, I used ofxGuiExtended.
@@ -50,3 +50,6 @@ I would like to make this project more extensible by completing any of the follo
 	1. Implementing some form of a numerical sort
 	2. Creating a dark mode/ theme selection for colors 
 	3. Adding a swapping sound that would vary in pitch as the sorting went on.
+	4. Provide an overview/ description of each algorithim.
+		- Best case/ worst case runtime
+		- Pseudocode? 
