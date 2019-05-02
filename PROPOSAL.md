@@ -48,8 +48,11 @@ pass once they sucsessfully sort the list.
 
 I would like to make this project more extensible by completing any of the following:
 	1. Implementing some form of a numerical sort
+	
 	2. Creating a dark mode/ theme selection for colors 
+	
 	3. Adding a swapping sound that would vary in pitch as the sorting went on.
+	
 	4. Provide an overview/ description of each algorithim.
 		- Best case/ worst case runtime
 		- Pseudocode? 
