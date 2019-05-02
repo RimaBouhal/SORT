@@ -23,11 +23,11 @@ void ofApp::setup() {
 
   // Set the collor pattern
   colors.resize(5);
-  colors[0] = ofColor::navy;
-  colors[1] = ofColor::blueSteel;
-  colors[2] = ofColor::seaGreen;
-  colors[3] = ofColor::cadetBlue;
-  colors[4] = ofColor::greenYellow;
+  colors[0] = ofColor::midnightBlue;
+  colors[1] = ofColor::crimson;
+  colors[2] = ofColor::teal;
+  colors[3] = ofColor::darkMagenta;
+  colors[4] = ofColor::goldenRod;
 
   // Set pixel density
   ofTrueTypeFont::setGlobalDpi(96);
@@ -44,7 +44,7 @@ void ofApp::setup() {
   // ----------------------------- CONTROL PANEL ----------------------------------------
   settings_panel = gui.addPanel("Settings", ofJson({ {"width", 300} }));
   settings_panel->setPosition(ofGetWidth() - settings_panel->getWidth(), 0);
-  settings_panel->getHeader()->setBackgroundColor(ofColor::mediumSlateBlue);
+  settings_panel->getHeader()->setBackgroundColor(ofColor(51, 0, 51));
   settings_panel->setShowHeader(true);
 
   // First add status info to display info to the user
@@ -70,7 +70,7 @@ void ofApp::setup() {
   sorting_toggles = settings_panel->addGroup(sorting_parameters, ofJson({ {"width", 300} }));
   sorting_toggles->setExclusiveToggles(true);
   sorting_toggles->setConfig(ofJson({ {"type", "radio"} }));
-  sorting_toggles->getHeader()->setBackgroundColor(ofColor::mediumSlateBlue);
+  sorting_toggles->getHeader()->setBackgroundColor(ofColor(51, 0, 51));
 
   // add listener to the sorting strategy group
   sorting_toggles->getActiveToggleIndex().addListener(this, &ofApp::HandleUserEntry);
@@ -79,7 +79,7 @@ void ofApp::setup() {
   display_toggles = settings_panel->addGroup(display_parameters, ofJson({ {"width", 300} }));
   display_toggles->setExclusiveToggles(true);
   display_toggles->setConfig(ofJson({ {"type", "radio"} }));
-  display_toggles->getHeader()->setBackgroundColor(ofColor::mediumSlateBlue);
+  display_toggles->getHeader()->setBackgroundColor(ofColor(51, 0, 51));
   display_toggles->setActiveToggle(1); // default to vertical
 
   // add listener to the display group
@@ -120,7 +120,7 @@ void ofApp::draw() {
 
   fbo.draw(0, 0);
 
-  ofBackground(ofColor::floralWhite);
+  ofBackground(ofColor::lavender); // sets the background to dark purple
 
   if (word_list.empty()) {
     return;

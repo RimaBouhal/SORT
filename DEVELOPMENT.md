@@ -99,4 +99,5 @@
 2. Wrote and completed my Proposal.md
 	- Summarize the app and explains the ways in which my app can be controled.
 
-3.
+3.  Completed my own OSC controller app and added it to my repository
+	- I was not planning on doing this when I first made it, but It works now!
