@@ -1,10 +1,9 @@
-# SORT: a learning tool for sorting algorithims 
-### by Rima Boual
+### SORT: a learning tool for sorting algorithims
 
 This application can take in lists of words or phrases, and can demonstrate how each can be sorted alphabetically or 
 by string length. 
 --------------------------------------------------------------------------------------------------------------------
-## Features: 
+#### Features: 
 
 One thing I placed heavy emphasis on when it came to the making of this app was it's user interface. Af of right now, 
 one can control my app three different ways. 
@@ -42,7 +41,7 @@ one can control my app three different ways.
 		- Will work with a simple Android app like the OSC Control app made by Adam Katz on the Google Play Store
 --------------------------------------------------------------------------------------------------------------------
 
-## Resources
+#### Resources
 
 For Sorting : 
 	Bubble sort: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/ 
