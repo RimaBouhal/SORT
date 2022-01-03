@@ -1,7 +1,7 @@
 ### SORT: a learning tool for sorting algorithims
 
-This application can take in lists of words or phrases, and can demonstrate how each can be sorted alphabetically or 
-by string length. 
+This application can take in lists of words or phrases, and can demonstrate how each can be sorted alphabetically or by string length.
+
 --------------------------------------------------------------------------------------------------------------------
 #### Features: 
 
